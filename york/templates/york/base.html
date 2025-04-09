@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <style>
+        p {
+        font-size: 20px;
+        font-family: Monospace;
+        color: black;
+        }
+
+        .cp {
+        font-size: 20px;
+        font-family: Monospace;
+        color: #ecf0f1;
+        }
+
+        h1 {
+        font-size: 60px;
+        font-family: Lobster;
+        color: black;
+        text-align: center;
+        }
+
+        h2 {
+        font-size: 60px;
+        font-family: Lobster;
+        color: black;
+        text-align: center;
+        }
+
+        h4 {
+        font-size: 30px;
+        font-family: Lobster;
+        color: black;
+        text-align: center;
+        }
+
+        .caw {
+        font-size: 20px;
+        font-family: Monospace;
+        color: #ecf0f1;
+        }
+
+        .ca {
+        font-size: 20px;
+        font-family: Monospace;
+        color: black;
+        }
+
+        a {
+        font-size: 20px;
+        font-family: Lobster;
+        color: black;
+        }
+
+        a:link{
+        text-decoration: none!important;
+        cursor: pointer;
+        }
+
+        a:hover {
+        color: orange;
+        }
+
+        .caw:hover {
+        color: #ecf0f1;
+        }
+
+        li {
+        font-size: 20px;
+        font-family: Monospace;
+        color: black;
+        }
+
+        .ncli {
+        font-size: 20px;
+        font-family: Lobster;
+        color: black;
+        }
+
+        /* Custom Navbar Styles */
+        .navbar {
+            background-color: #2c3e50;
+        }
+
+        .navbar a {
+            color: #ecf0f1;
+        }
+
+        .navbar a:hover {
+            color: #f39c12;
+        }
+
+        .navbar .navbar-brand {
+            color: #ecf0f1;
+        }
+
+        .navbar .navbar-brand:hover {
+            color: #f39c12;
+        }
+
+        .navbar-nav .nav-item .navbar-text {
+            color: #ecf0f1 !important;
+        }
+
+        /* Customize the logout button */
+        .btn-outline-secondary {
+            background-color: #2c3e50 !important;
+            color: #ecf0f1 !important;
+            border-color: #B2BEB5 !important;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #f39c12 !important;
+            border-color: #f39c12 !important;
+            color: #ecf0f1 !important;
+        }
+
+        .card .card-header {
+            background-color: #2c3e50;
+        }
+
+        .card.mb-3 {
+            border: 2px solid #2c3e50;
+        }
+
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Caleb York</title>
+
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light mb-4 border">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'york:index' %}">
+                Homepage</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                 data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
+                 aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item ncli">
+                        <a class="nav-link" href="{% url 'york:questions' %}">
+                            Questions</a></li>
+                    <li class="nav-item ncli">
+                        <a class="nav-link" href="{% url 'york:about_me' %}">
+                            About Me</a></li>
+                    <li class="nav-item ncli">
+                        <a class="nav-link" href="{% url 'york:interests' %}">
+                            Interests</a></li>
+                </ul>
+
+                <!-- Account-related links -->
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+
+                    {% if user.is_authenticated %}
+                        <li class="nav-item ncli">
+                            <span class="navbar-text me-2">Hello, {{ user.username }}
+                            </span></li>
+                    {% else %}
+                        <li class="nav-item ncli">
+                            <a class="nav-link" href="{% url 'accounts:register' %}">
+                                Register</a></li>
+                        <li class="nav-item ncli">
+                            <a class="nav-link" href="{% url 'accounts:login' %}">
+                                Log in</a></li>
+                    {% endif %}
+                </ul>
+
+                {% if user.is_authenticated %}
+                    <form action="{% url 'accounts:logout' %}" method='post'>
+                        {% csrf_token %}
+                        <button name='submit' class='btn btn-outline-secondary btn-sm'>
+                            Log out</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="pb-2 mb-2 border-bottom">
+            {% block page_header %}{% endblock page_header %}
+        </div>
+
+        <div>
+            {% block content %}{% endblock content %}
+        </div>
+    </main>
+</body>
+</html>

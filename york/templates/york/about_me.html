@@ -1,0 +1,13 @@
+{% extends 'york/base.html' %}
+{% load embed_video_tags %}
+
+{% block page_header %}
+    <h1>Video about Caleb York</h1>
+{% endblock page_header %}
+
+{% block content %}
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        {% video video.url '90%x90%' %}
+    </div>
+
+{% endblock content %}

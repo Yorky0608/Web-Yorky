@@ -1,0 +1,43 @@
+{% extends 'york/base.html' %}
+
+{% block page_header %}
+    <h1>Interests</h1>
+{% endblock page_header %}
+
+{% block content %}
+    <style>
+        .a:link {
+        color: white;
+        }
+
+        .a:visited {
+        color: white;
+        }
+    </style>
+    {% load static %}
+    <div style="display: flex; text-align: left; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
+        <img src="{% static 'images/baseball.jpg' %}" alt="Baseball" class="img-fluid rounded">
+        <p style="max-width: 600px;">One of my favorite sports to play is baseball.
+            My senior year I decided to stop playing due to health concerns.</p>
+    </div>
+
+    <div style="display: flex; text-align: right; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
+        <p style="max-width: 600px;">Another sport I enjoy playing is tennis.
+            I will be teaching tennis to a wide age group over the summer.</p>
+        <img src="{% static 'images/baseball.jpg' %}" alt="Baseball" class="img-fluid rounded">
+    </div>
+
+    <div style="display: flex; text-align: left; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
+        <img src="{% static 'images/baseball.jpg' %}" alt="Baseball" class="img-fluid rounded">
+        <p style="max-width: 600px;">One of my favorite games is Minecraft.
+            I got to the point where I now host my own private, modded server.</p>
+    </div>
+
+    <div style="display: flex; text-align: right; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
+        <p style="max-width: 600px;">Every now and then I love to create random programs that help me complete tasks at a quicker pass.
+            Here's one that I made and need to speed up and improve a process for keeping track of income made from a shop. </p>
+        <img src="{% static 'images/baseball.jpg' %}" alt="Baseball" class="img-fluid rounded">
+    </div>
+
+    <a class="a" href="{% url 'york:asian' %}">?????</a>
+{% endblock content %}

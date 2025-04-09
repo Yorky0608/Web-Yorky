@@ -1,0 +1,27 @@
+{% extends 'york/base.html' %}
+
+{% block page_header %}
+    <h1>Caleb York</h1>
+{% endblock page_header %}
+
+{% block content %}
+    <div class="container text-center">
+        {% load static %}
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <img src="{% static 'images/baseball.jpg' %}" alt="Baseball" class="img-fluid rounded">
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8">
+                <p class="lead">
+                    Welcome to my personal site! I'm Caleb York, I love tinkering with anything that has to do with technology.
+                    I love working on new projects and exploring technology.
+                    This site is all about my life.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "york/base.html" %}
+
+{% block page_header %}
+ <h1><a class="ca" href="{% url 'york:responses' question.id %}">{{ response.text }}</a></h1>
+{% endblock page_header %}
+
+{% block content %}
+
+  <p>Edit response:</p>
+
+  <form action="{% url 'york:edit_response' response.id %}" method='post'>
+      {% csrf_token %}
+      {{ form.as_div }}
+      <button name="submit" class='btn btn-outline-secondary btn-sm'>Save changes</button>
+  </form>
+
+{% endblock content %}
