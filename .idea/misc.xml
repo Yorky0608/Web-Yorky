@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.12 (Yorky)" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (tik_gram)" project-jdk-type="Python SDK" />
 </project>
