@@ -1,7 +1,7 @@
 {% extends "york/base.html" %}
 
 {% block page_header %}
- <h1><a class="ca" href="{% url 'york:posts' blog.id %}">{{ post.text }}</a></h1>
+ <h1><a class="ca" href="{% url 'york:posts' blog.id %}">{{ blog.text }}</a></h1>
 {% endblock page_header %}
 
 {% block content %}

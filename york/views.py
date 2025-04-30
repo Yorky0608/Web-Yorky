@@ -161,16 +161,16 @@ def edit_post(request, post_id):
     else:
         if request.method != 'POST':
             # Initial request; pre-fill form with the current entry.
-            form = PostForm(instance=blog)
+            form = PostForm(instance=post)
         else:
             # POST data submitted; process data.
-            form = PostForm(instance=blog, data=request.POST)
+            form = PostForm(instance=post, data=request.POST)
             if form.is_valid():
                 form.save
-                return redirect('york:posts', question_id=blog.id)
+                return redirect('york:posts', blog_id=blog.id)
 
         context = {'post': post, 'blog': blog, 'form': form}
-        return render(request, 'york/edit_response.html', context)
+        return render(request, 'york/edit_post.html', context)
 
 
 def asian(request):
