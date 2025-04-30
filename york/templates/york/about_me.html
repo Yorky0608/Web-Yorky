@@ -5,6 +5,7 @@
 {% endblock page_header %}
 
 {% block content %}
+{% load static %}
 
     <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
         <p>Here is a bar graph showing how much sleep I generally get each month from the past year.</p>
@@ -38,6 +39,12 @@
             Endless Blade, was a lot of fun. I learned a lot about how important hierarchy of how nodes are placed can
             quite literally make or break your game. I still can't figure out why one computer is having graphical issues,
         but everything else is fine.</p>
+    </div>
+
+    <div style="display: flex; text-align: left; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
+        <img src="{% static 'images/blackjack.png' %}" alt="Baseball" class="img-fluid rounded" style="width: 300px; height: 300px;">
+        <p style="max-width: 600px;">Once in a while I like to improve older projects that I worked on. One of them being
+        my old blackjack game.</p>
     </div>
 
 {% endblock content %}
