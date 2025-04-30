@@ -1,0 +1,39 @@
+{% extends 'york/base.html' %}
+
+{% block page_header %}
+ <h1>{{ blog.text }}</h1>
+{% endblock page_header %}
+
+
+{% block content %}
+
+    {% for post in posts %}
+        <div class="card mb-3">
+            <!-- Card header with timestamp and edit link -->
+            <h4 class="card-header">
+                <p class="cp">{{ post.owner }}</p>
+            </h4>
+            <!-- Card body with entry text -->
+            <div class="card-body" style="display: flex; justify-content: center;">{{ post.text|linebreaks }}</div>
+            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                {% if request.user == post.owner %}
+                        <small>
+                            <button class='btn btn-outline-secondary btn-sm'>
+                                <a class="caw" href="{% url 'york:edit_post' post.id %}">
+                                    Edit Post</a>
+                            </button>
+                        </small>
+                    {% endif %}
+            </div>
+        </div>
+
+    {% empty %}
+        <p>There are no posts for this blog yet.</p>
+    {% endfor %}
+    {% if request.user.is_superuser %}
+        <button class='btn btn-outline-secondary btn-sm'>
+            <a class="caw" href="{% url 'york:new_post' blog.id %}">Add new post</a>
+        </button>
+    {% endif %}
+
+{% endblock content %}

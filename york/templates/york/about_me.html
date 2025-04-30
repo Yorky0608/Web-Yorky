@@ -1,13 +1,43 @@
 {% extends 'york/base.html' %}
-{% load embed_video_tags %}
 
 {% block page_header %}
-    <h1>Video about Caleb York</h1>
+    <h1>About Caleb York</h1>
 {% endblock page_header %}
 
 {% block content %}
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-        {% video video.url '90%x90%' %}
+
+    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
+        <p>Here is a bar graph showing how much sleep I generally get each month from the past year.</p>
+    </div>
+
+  {% autoescape off %}
+  {{ plot_div }}
+  {% endautoescape %}
+
+    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
+        <p>I have played 5 different sports being: Baseball (from age 6), Flag Football (just one year), Soccer (for 2 years),
+            Basketball (for 3 years), and Tennis (since middle schools).</p>
+    </div>
+
+    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
+        <p>I feel in love with technology in 6th grade. This was my first time having a class that taught students general
+            programming knowledge. I got to program a robot which was what made me realize what I wanted to do when I grew
+        up.</p>
+    </div>
+
+    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
+        <p>I worked at Meijer for 10 months as a cart pusher. I would help out in other areas from time to time.</p>
+    </div>
+
+    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
+        <p>My favorite color is blue as you can tell from the website's color scheme.</p>
+    </div>
+
+    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
+        <p>I love to learn new things. One thing that I enjoyed learning the most about was Godot. Making my own game,
+            Endless Blade, was a lot of fun. I learned a lot about how important hierarchy of how nodes are placed can
+            quite literally make or break your game. I still can't figure out why one computer is having graphical issues,
+        but everything else is fine.</p>
     </div>
 
 {% endblock content %}

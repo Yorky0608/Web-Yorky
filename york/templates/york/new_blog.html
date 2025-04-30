@@ -1,0 +1,14 @@
+{% extends "york/base.html" %}
+
+{% block page_header %}
+ <h1>New Blog</h1>
+{% endblock page_header %}
+
+{% block content %}
+  <p>Add a new blog:</p>
+  <form action="{% url 'york:new_blog' %}" method='post'>
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button name="submit" class='btn btn-outline-secondary btn-sm'>Add blog</button>
+  </form>
+{% endblock content %}tent %}

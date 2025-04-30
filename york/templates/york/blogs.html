@@ -1,0 +1,26 @@
+{% extends 'york/base.html' %}
+
+{% block page_header %}
+    <h1>Blogs</h1>
+{% endblock page_header %}
+
+
+{% block content %}
+
+    <ul class="list-group border-bottom pb-2 mb-4">
+        {% for blog in blogs %}
+            <li class="list-group-item border-0">
+                <a class="ca" href="{% url 'york:posts' blog.id %}">
+                 {{ blog.text }}</a>
+            </li>
+        {% empty %}
+            <li class="list-group-item border-0">No blogs have been added yet.</li>
+        {% endfor %}
+    </ul>
+    {% if request.user.is_superuser %}
+        <button class='btn btn-outline-secondary btn-sm'>
+            <a class="caw" href="{% url 'york:new_blog' %}">Add a new blog</a>
+        </button>
+    {% endif %}
+
+{% endblock content %}
