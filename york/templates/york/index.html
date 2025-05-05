@@ -5,28 +5,59 @@
 {% endblock page_header %}
 
 {% block content %}
-    <div class="container text-center">
+    <div class="container text-center pb-4">
         {% load static %}
 
         <div class="row justify-content-center mt-4">
             <div class="col-md-6">
-                <img src="{% static 'images/Senior.jpg' %}" alt="Baseball" class="img-fluid rounded" style="width: 300px; height: 300px;">
+                <img src="{% static 'images/Senior.jpg' %}" alt="Baseball" class="img-fluid rounded" style="width: 500px; height: 500px;">
             </div>
         </div>
 
         <div class="row justify-content-center mt-4">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <p class="lead">
                     Welcome to my personal site! I'm Caleb York, I love tinkering with anything that has to do with technology.
                     I love working on new projects and exploring technology.
-                    This site is all about my life.
+                    This site is about who I am, and what I have learned in the past year.
                 </p>
             </div>
         </div>
     </div>
 
-    <div>
-        # Add the rest of the pictures!
-    </div>
+    <div class="container text-center mb-5">
+        <div class="card mb-3">
+            <h4 class="card-header">
+                <p class="cp">Pictures of Family, Friends, and Pets</p>
+            </h4>
 
+            <div class="card-body">
+
+                <div class="row justify-content-center pb-5 mt-4">
+                    <div class="col-md-4">
+                        <img src="{% static 'images/Baby.jpg' %}" alt="Baseball" class="img-fluid rounded" style="width: 300px; height: 300px;">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'images/Benny.jpg' %}" alt="Baseball" class="img-fluid rounded" style="width: 300px; height: 300px;">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'images/Dress.jpg' %}" alt="Baseball" class="img-fluid rounded" style="width: 300px; height: 300px;">
+                    </div>
+                </div>
+
+
+                <div class="row justify-content-center pb-4">
+                    <div class="col-md-4">
+                        <img src="{% static 'images/Fam.jpg' %}" alt="Baseball" class="img-fluid rounded" style="width: 300px; height: 300px;">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'images/Friends_Cedar.jpg' %}" alt="Baseball" class="img-fluid rounded" style="width: 300px; height: 300px;">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'images/Mil.jpg' %}" alt="Baseball" class="img-fluid rounded" style="width: 300px; height: 300px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

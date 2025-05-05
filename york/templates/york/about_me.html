@@ -8,44 +8,40 @@
 {% load static %}
 
     <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
-        <p>Here is a bar graph showing how much sleep I generally get each month from the past year.</p>
-    </div>
-
-  {% autoescape off %}
-  {{ plot_div }}
-  {% endautoescape %}
-
-    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
-        <p>I have played 5 different sports being: Baseball (from age 6), Flag Football (just one year), Soccer (for 2 years),
-            Basketball (for 3 years), and Tennis (since middle schools).</p>
-    </div>
-
-    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
-        <p>I feel in love with technology in 6th grade. This was my first time having a class that taught students general
+        <p>I fell in love with technology in 6th grade. This was my first time having a class that taught students general
             programming knowledge. I got to program a robot which was what made me realize what I wanted to do when I grew
-        up.</p>
+        up. I have played 5 different sports being: Baseball (from age 6), Flag Football (just one year), Soccer (for 2 years),
+            Basketball (for 3 years), and Tennis (since middle school). My first job was at Meijer. I worked at Meijer for 10
+            months as a cart pusher. I would help out in other areas from time to time. My favorite color is blue as you can tell
+            from the website's color scheme. I do wish I had the opportunity learn to code at a much younger age. I did not start
+            exploring the world of programming until I got my first All-In-One the summer before my freshmen year. Even then, it
+            was not until my junior year in school that I really focused on coding and learning all I could. Minecraft became a
+            tool that ignited that spark to want to learn to code.</p>
     </div>
 
     <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
-        <p>I worked at Meijer for 10 months as a cart pusher. I would help out in other areas from time to time.</p>
-    </div>
-
-    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
-        <p>My favorite color is blue as you can tell from the website's color scheme.</p>
-    </div>
-
-    <div style="display: flex; text-align: left; justify-content: left; align-items: center; gap: 20px; margin-top: 20px;">
-        <p>I love to learn new things. One thing that I enjoyed learning the most about was Godot. Making my own game,
+        <p>I love to learn new things. Something that I recently enjoyed learning about was Godot. Making my own game,
             Endless Blade, was a lot of fun. I learned a lot about how important hierarchy of how nodes are placed can
             quite literally make or break your game. I still can't figure out why one computer is having graphical issues,
         but everything else is fine.</p>
         <img src="{% static 'images/endlessblade.png' %}" alt="Baseball" class="img-fluid rounded" style="width: 400px; height: 300px;">
     </div>
 
-    <div style="display: flex; text-align: left; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
+    <div style="display: flex; text-align: center; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;" class="pb-4">
         <img src="{% static 'images/blackjack.png' %}" alt="Baseball" class="img-fluid rounded" style="width: 300px; height: 300px;">
         <p style="max-width: 600px;">Once in a while I like to improve older projects that I worked on. One of them being
         my old blackjack game. My color scheme was not the best. I used to many blues I am now realizing.</p>
     </div>
+
+    <div style="display: flex; text-align: center; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
+        {% autoescape off %}
+        {{ plot_div }}
+        {% endautoescape %}
+        <p>Here is a bar graph showing how much sleep I generally get each month from the past year.</p>
+    </div>
+
+  {% autoescape off %}
+  {{ plot_div }}
+  {% endautoescape %}
 
 {% endblock content %}

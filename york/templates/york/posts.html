@@ -15,15 +15,15 @@
             </h4>
             <!-- Card body with entry text -->
             <div class="card-body" style="display: flex; justify-content: center;">{{ post.text|linebreaks }}</div>
-            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-                {% if request.user == post.owner %}
-                        <small>
-                            <button class='btn btn-outline-secondary btn-sm'>
-                                <a class="caw" href="{% url 'york:edit_post' post.id %}">
-                                    Edit Post</a>
-                            </button>
-                        </small>
-                    {% endif %}
+                <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                    {% if request.user == post.owner %}
+                            <small>
+                                <button class='btn btn-outline-secondary btn-sm'>
+                                    <a class="caw" href="{% url 'york:edit_post' post.id %}">
+                                        Edit Post</a>
+                                </button>
+                            </small>
+                        {% endif %}
             </div>
         </div>
 
