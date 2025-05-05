@@ -9,11 +9,9 @@
 
     {% for response in responses %}
         <div class="card mb-3">
-            <!-- Card header with timestamp and edit link -->
             <h4 class="card-header">
                 <p class="cp">{{ response.owner }}</p>
             </h4>
-            <!-- Card body with entry text -->
             <div class="card-body" style="display: flex; justify-content: center;">{{ response.text|linebreaks }}</div>
             <div style="display: flex; justify-content: center; margin-bottom: 20px;">
                 {% if request.user == response.owner %}
